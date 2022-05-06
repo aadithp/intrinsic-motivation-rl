@@ -3,13 +3,11 @@ _target_: agent.icm.ICMAgent
 name: icm
 obs_dim: ??? # to be specified later
 action_dim: ??? # to be specified later
-enc_type: ???
 device: ${device}
 lr: 1e-4
 batch_size: 1024
 icm_scale: 1.0
-sparsity: 1
-reward_free: true
+reward_free: false
 nstep: 1
 critic_target_tau: 0.01
 update_every_steps: 2
@@ -24,4 +22,3 @@ critic_spectral_norms: [false, false]
 actor_use_ln: false
 actor_hidden_dims: [1024, 1024] #[256, 256, 256]
 actor_spectral_norms: [false, false]
-repr_dim: 50
