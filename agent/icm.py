@@ -95,7 +95,7 @@ class ICMAgent(SACAgent):
         if self.use_tb or self.use_wandb:
             metrics["intr_reward"] = intr_reward.mean().item()
 
-        if self.reward_free:
+        if step % 1500 != 0:
             reward = intr_reward
         else:
             reward = extr_reward + intr_reward
